@@ -2,6 +2,6 @@
 
 echo "Hello world";
 
-if($test=="2"){
-  return 2;
+if ($test=="2") {
+    return 2;
 }
