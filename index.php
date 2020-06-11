@@ -9,3 +9,5 @@ if ($test=="2") {
 foreach ($truc as $t) {
     echo 'truc';
 }
+
+  return true;

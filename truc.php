@@ -2,7 +2,6 @@
 
 print "machine";
 
-if($truc)
-{
-   return false;
+if ($truc) {
+    return false;
 }
