@@ -16,11 +16,18 @@ jobs:
               uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
-
+            
+            - name: Get All Changed Files
+              uses: jitterbit/get-changed-files@v1
+              id: changedfiles
+              with:
+                  format: space-delimited
+                  token: ${{ secrets.GITHUB_TOKEN }}
+            
             - name: Run PHP-CS-Fixer
               uses: docker://oskarstark/php-cs-fixer-ga:2.15.3
               with:
-                  args: --using-cache=no ${{ github.event_path.commits.modified }}
+                  args: --using-cache=no ${{ steps.changedfiles.outputs.added_modified }}
 
             - name: Create PR for CS fixups
               uses: peter-evans/create-pull-request@v2.2.0
