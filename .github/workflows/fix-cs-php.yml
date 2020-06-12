@@ -18,7 +18,9 @@ jobs:
                   ref: ${{ github.head_ref }}
 
             - name: Run PHP-CS-Fixer
-              uses: docker://dchatry/php-cs-fixer-ga:2.15.3
+              uses: docker://oskarstark/php-cs-fixer-ga:2.15.3
+              with:
+                  args: --using-cache=no ${{ github.event_path.commits.modified }}
 
             - name: Create PR for CS fixups
               uses: peter-evans/create-pull-request@v2.2.0
