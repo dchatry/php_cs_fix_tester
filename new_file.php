@@ -1,11 +1,9 @@
 <?php
 
-if($truc==2)
-{
- print "machein";
+if ($truc==2) {
+    print "machein";
 }
 
-foreach($t as $p)
- {
-print "qsd";
-  }
+foreach ($t as $p) {
+    print "qsd";
+}
