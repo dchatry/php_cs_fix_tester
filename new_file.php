@@ -8,4 +8,4 @@ if($truc==2)
 foreach($t as $p)
   {
 print "qsd";
- }
+  }
